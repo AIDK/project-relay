@@ -1,0 +1,13 @@
+Internal Use License
+
+Copyright (c) 2025 Cash Crusaders Franchising (Pty) Ltd
+
+This software is licensed for internal use only within Cash Crusaders Franchising (Pty) Ltd. Employees of Cash Crusaders Franchising (Pty) Ltd are granted a non-exclusive, non-transferable license to use this software for purposes related to their work at Cash Crusaders Franchising (Pty) Ltd.
+
+This license does not grant the right to:
+
+* Distribute the software outside of Cash Crusaders Franchising (Pty) Ltd.
+* Modify the software for purposes unrelated to Cash Crusaders Franchising (Pty) Ltd's business.
+* Reverse engineer or decompile the software.
+
+Cash Crusaders Franchising (Pty) Ltd retains all rights to the software.
