@@ -31,3 +31,6 @@ buildw:
 	go build -o bin/$(PROJECT_NAME) $(GO_FILES)
 	set GOOS=
 	set GOARCH=
+
+recreate:
+	@$(BINARY) -recreate
