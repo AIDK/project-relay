@@ -7,12 +7,8 @@ import (
 	"os"
 
 	"github.com/AIDK/project-relay/src/dirutil"
-	"github.com/BurntSushi/toml"
+	"github.com/AIDK/project-relay/src/parser"
 )
-
-type Config struct {
-	Directories []string `toml:"directories"`
-}
 
 func main() {
 
@@ -20,20 +16,14 @@ func main() {
 	recreate := flag.Bool("recreate", false, "recreate directories (delete existing ones)")
 	flag.Parse()
 
-	// read the configuration file (TOML)
-	tomlFile, err := os.ReadFile("config.toml")
+	// parse application config file
+	tomlFile, err := parser.ParseConfig()
 	if err != nil {
 		log.Fatalf("error reading TOML file: %v", err)
 	}
 
-	// decode TOML file to config struct
-	var config Config
-	if _, err := toml.Decode(string(tomlFile), &config); err != nil {
-		log.Fatalf("error decoding TOML: %v", err)
-	}
-
 	// create directories
-	err = dirutil.Ensure(config.Directories, *recreate)
+	err = dirutil.Ensure(tomlFile.Directories, *recreate)
 	if err != nil {
 		fmt.Println("Error: ", err)
 		os.Exit(1)
