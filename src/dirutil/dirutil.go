@@ -70,3 +70,22 @@ func Ensure(dirs []string, recreate bool) error {
 
 	return nil
 }
+
+func FileCount(dir string) (count int, err error) {
+
+	// read directory
+	dirEntries, err := os.ReadDir(dir)
+	if err != nil {
+		return 0, err
+	}
+
+	// get files in directory (exclude sub directories)
+	files := 0
+	for _, entry := range dirEntries {
+		if !entry.IsDir() {
+			files++
+		}
+	}
+
+	return files, nil
+}
